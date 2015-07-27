@@ -1,0 +1,10 @@
+a.na {
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  pointer-events: none;
+  cursor: default;
+}
+a {
+  color: #0088cc;
+  text-decoration: none;
+}
