@@ -43,7 +43,7 @@ $(document).ready(function () {
                         },
                         "actions": [
                             {
-                                "label": "mandrillSendMail_1",
+                                "label": "templateMail_1",
                                 "requiredProperties": [
                                     {
                                         "to": email
@@ -87,7 +87,7 @@ $(document).ready(function () {
                                 "requiredProperties": [
                                     {
                                         "venue_name": locName,
-                                        near_location : locNear
+                                        "near_location" : locNear
                                     }
                                 ]
                             }
