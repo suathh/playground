@@ -50,26 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <!--
-    BODY TAG OPTIONS:
-    =================
-    Apply one or more of the following classes to get the
-    desired effect
-    |---------------------------------------------------------|
-    | SKINS         | skin-blue                               |
-    |               | skin-black                              |
-    |               | skin-purple                             |
-    |               | skin-yellow                             |
-    |               | skin-red                                |
-    |               | skin-green                              |
-    |---------------------------------------------------------|
-    |LAYOUT OPTIONS | fixed                                   |
-    |               | layout-boxed                            |
-    |               | layout-top-nav                          |
-    |               | sidebar-collapse                        |
-    |               | sidebar-mini                            |
-    |---------------------------------------------------------|
-    -->
+
     <body class="skin-blue sidebar-mini">
         <div class="wrapper">
 
@@ -202,14 +183,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <span>Documentation</span>
                             </a>
                         </li>
-                        
+
                         <li>
                             <a href="http://forum.waylay.io/" target="_blank">
                                 <i class="fa fa-users"></i> 
                                 <span>Forum</span>
                             </a>
                         </li>
-                        
+
                         <li>
                             <a href="../about.html">
                                 <i class="fa fa-file-o"></i> 
@@ -234,128 +215,214 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <!-- Main content -->
                 <section class="content">
-                    <h1>Use Cases</h1><br>
-                    The following use cases are made possible with the Waylay platform. Feel free to make use of them.<br>
+                    <h1>Use Cases</h1>
+                    <h4>The following use cases are made possible with the Waylay platform. Feel free to make use of them.</h4>
 
                     <!-- Your Page Content Here -->
-                    <!-- START ACCORDION & CAROUSEL-->
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="box box-solid">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">Weather</h3>
-                                </div><!-- /.box-header -->
-                                <div class="box-body">
-                                    <div class="box-group" id="accordionWeather">
-                                        <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
-                                        <div class="panel box box-primary">
-                                            <div class="box-header with-border">
-                                                <h4 class="box-title">
-                                                    <a data-toggle="collapse" data-parent="#accordionWeather" href="#weatherOne">
-                                                        Daily Weather Alert
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="weatherOne" class="panel-collapse collapse in">
-                                                <div class="box-body">
-                                                    This form makes use of Waylay platform to send you email notifications when there is a wet weather on weekday/weekend between two times.<br>
-                                                </div> 
-                                                <div align="right"><a href="weatherAlert.html" class="btn btn-success" role="button">Create</a><br>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel box box-danger">
-                                            <div class="box-header with-border">
-                                                <h4 class="box-title">
-                                                    <a data-toggle="collapse" data-parent="#accordionWeather" href="#weatherTwo">
-                                                        Coming soon.
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="weatherTwo" class="panel-collapse collapse">
-                                                <div class="box-body">
-                                                    Coming soon.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel box box-success">
-                                            <div class="box-header with-border">
-                                                <h4 class="box-title">
-                                                    <a data-toggle="collapse" data-parent="#accordionWeather" href="#weatherThree">
-                                                        Coming soon.
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="weatherThree" class="panel-collapse collapse">
-                                                <div class="box-body">
-                                                    Coming soon.
-                                                </div>
-                                            </div>
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>Weather</h3>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-cloud"></i>
+                                </div>
+                            </div>
+                            <div id="accordionWeather">
+                                <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+                                <div class="panel box box-default">
+                                    <div class="box-header with-border">
+                                        <h4 class="box-title">
+                                            <a data-toggle="collapse" data-parent="#accordionWeather" href="#weather1">
+                                                Daily Weather Alert
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="weather1" class="panel-collapse collapse in">
+                                        <div class="box-body">
+                                            Sends you email notifications when there is a wet weather on weekday / weekend between two times.<br>
+                                        </div> 
+                                        <div class="box-footer"><a href="weatherAlert.html">Create</a> <i class="fa fa-arrow-circle-right"></i></div>
+                                    </div>
+                                </div>
+                                <div class="panel box box-default">
+                                    <div class="box-header with-border">
+                                        <h4 class="box-title">
+                                            <a data-toggle="collapse" data-parent="#accordionWeather" href="#weather2">
+                                                Coming soon.
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="weather2" class="panel-collapse collapse">
+                                        <div class="box-body">
+                                            Coming soon.
                                         </div>
                                     </div>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-                        </div><!-- /.col -->
-                        <div class="col-md-6">
-                            <div class="box box-solid">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">Finance</h3>
-                                </div><!-- /.box-header -->
-                                <div class="box-body">
-                                    <div class="box-group" id="accordionFinance">
-                                        <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
-                                        <div class="panel box box-primary">
-                                            <div class="box-header with-border">
-                                                <h4 class="box-title">
-                                                    <a data-toggle="collapse" data-parent="#accordionFinance" href="#financeOne">
-                                                        Currency Exchange Alert
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="financeOne" class="panel-collapse collapse in">
-                                                <div class="box-body">
-                                                    This form makes use of Waylay platform to send you email notifications when a currency exchange rate falls or rises above a value.<br>
-                                                </div>
-                                                <div align="right"><a href="currencyAlert.html" class="btn btn-success" role="button">Create</a><br>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel box box-danger">
-                                            <div class="box-header with-border">
-                                                <h4 class="box-title">
-                                                    <a data-toggle="collapse" data-parent="#accordionFinance" href="#financeTwo">
-                                                        Stock Price Alert
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="financeTwo" class="panel-collapse collapse">
-                                                <div class="box-body">
-                                                    <div class="box-body">
-                                                        This form makes use of Waylay platform to send you email notifications when a stock price falls or rises above a threshold value.
-                                                    </div>
-                                                    <div align="right"><a href="stockAlert.html" class="btn btn-success" role="button">Create</a><br>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="panel box box-success">
-                                            <div class="box-header with-border">
-                                                <h4 class="box-title">
-                                                    <a data-toggle="collapse" data-parent="#accordionFinance" href="#financeThree">
-                                                        Coming soon.
-                                                    </a>
-                                                </h4>
-                                            </div>
-                                            <div id="financeThree" class="panel-collapse collapse">
-                                                <div class="box-body">
-                                                    Coming soon.
-                                                </div>
-                                            </div>
+                                </div>
+                                <div class="panel box box-default">
+                                    <div class="box-header with-border">
+                                        <h4 class="box-title">
+                                            <a data-toggle="collapse" data-parent="#accordionWeather" href="#weather3">
+                                                Coming soon.
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="weather3" class="panel-collapse collapse">
+                                        <div class="box-body">
+                                            Coming soon.
                                         </div>
                                     </div>
-                                </div><!-- /.box-body -->
-                            </div><!-- /.box -->
-                        </div><!-- /.col -->
+                                </div>
+                            </div>
+                        </div><!-- ./col -->
+                    
+
+                    <!-- START ACCORDION & CAROUSEL-->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-yellow">
+                            <div class="inner"><h3>Finance</h3></div>
+                            <div class="icon"><i class="fa fa-dollar"></i></div>
+                        </div>
+                        <div class="box-group" id="accordionFinance">
+                            <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+                            <div class="panel box box-default">
+                                <div class="box-header with-border">
+                                    <h4 class="box-title">
+                                        <a data-toggle="collapse" data-parent="#accordionFinance" href="#finance1">Currency Exchange Alert</a>
+                                    </h4>
+                                </div>
+                                <div id="finance1" class="panel-collapse collapse in">
+                                    <div class="box-body">Sends you email notifications when a currency exchange rate falls or rises above a threshold value.<br></div>
+                                    <div class="box-footer"><a href="currencyAlert.html">Create</a> <i class="fa fa-arrow-circle-right"></i></div>
+                                </div>
+                            </div>
+                            <div class="panel box box-default">
+                                <div class="box-header with-border">
+                                    <h4 class="box-title">
+                                        <a data-toggle="collapse" data-parent="#accordionFinance" href="#finance2">Stock Price Alert</a>
+                                    </h4>
+                                </div>
+                                <div id="finance2" class="panel-collapse collapse">
+                                    <div class="box-body">
+                                        <div class="box-body">Sends you email notifications when a stock price falls or rises above a threshold value.</div>
+                                        <div class="box-footer"><a href="stockAlert.html">Create</a> <i class="fa fa-arrow-circle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel box box-default">
+                                <div class="box-header with-border">
+                                    <h4 class="box-title">
+                                        <a data-toggle="collapse" data-parent="#accordionFinance" href="#finance3">Coming soon.</a>
+                                    </h4>
+                                </div>
+                                <div id="finance3" class="panel-collapse collapse">
+                                    <div class="box-body">
+                                        Coming soon.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- START ACCORDION & CAROUSEL-->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-red">
+                            <div class="inner"><h3>Social</h3></div>
+                            <div class="icon"><i class="fa fa-users"></i></div>
+                        </div>
+                        <div class="box-group" id="accordionSocial">
+                            <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+                            <div class="panel box box-default">
+                                <div class="box-header with-border">
+                                    <h4 class="box-title">
+                                        <a data-toggle="collapse" data-parent="#accordionSocial" href="#social1">Foursquare Here Now Alert</a>
+                                    </h4>
+                                </div>
+                                <div id="social1" class="panel-collapse collapse in">
+                                    <div class="box-body">
+                                        Sends you email notifications when the number of HereNow (recent check in-s) of a foursquare venue goes above a threshold value.
+                                    </div>
+                                    <div class="box-footer"><a href="foursquareHereNowAlert.html">Create</a> <i class="fa fa-arrow-circle-right"></i></div>
+                                </div>
+                            </div>
+                            <div class="panel box box-default">
+                                <div class="box-header with-border">
+                                    <h4 class="box-title">
+                                        <a data-toggle="collapse" data-parent="#accordionSocial" href="#social2">Coming soon.</a>
+                                    </h4>
+                                </div>
+                                <div id="social2" class="panel-collapse collapse">
+                                    <div class="box-body">
+                                        Coming soon.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel box box-default">
+                                <div class="box-header with-border">
+                                    <h4 class="box-title">
+                                        <a data-toggle="collapse" data-parent="#accordionSocial" href="#social3">Coming soon.</a>
+                                    </h4>
+                                </div>
+                                <div id="social3" class="panel-collapse collapse">
+                                    <div class="box-body">
+                                        Coming soon.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- START ACCORDION & CAROUSEL-->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-green">
+                            <div class="inner"><h3>Agriculture</h3></div>
+                            <div class="icon"><i class="fa fa-tree"></i></div>
+                        </div>
+                        <div class="box-group" id="accordionAgri">
+                            <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
+                            <div class="panel box box-default">
+                                <div class="box-header with-border">
+                                    <h4 class="box-title">
+                                        <a data-toggle="collapse" data-parent="#accordionAgri" href="#Agri1">Coming soon.</a>
+                                    </h4>
+                                </div>
+                                <div id="Agri1" class="panel-collapse collapse in">
+                                    <div class="box-body">
+                                        Coming soon.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel box box-default">
+                                <div class="box-header with-border">
+                                    <h4 class="box-title">
+                                        <a data-toggle="collapse" data-parent="#accordionAgri" href="#Agri2">Coming soon.</a>
+                                    </h4>
+                                </div>
+                                <div id="Agri2" class="panel-collapse collapse">
+                                    <div class="box-body">
+                                        Coming soon.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel box box-default">
+                                <div class="box-header with-border">
+                                    <h4 class="box-title">
+                                        <a data-toggle="collapse" data-parent="#accordionAgri" href="#Agri3">Coming soon.</a>
+                                    </h4>
+                                </div>
+                                <div id="Agri3" class="panel-collapse collapse">
+                                    <div class="box-body">
+                                        Coming soon.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
 
                 </section><!-- /.content -->
