@@ -35,7 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <![endif]-->
 
         <link href="dist/css/waylay.css" rel="stylesheet" type="text/css" />
-        
+
         <!-- REQUIRED JS SCRIPTS -->
         <!-- jQuery 2.1.4 -->
         <script src="plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
@@ -52,8 +52,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="dist/js/app.min.js" type="text/javascript"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="dist/js/demo.js" type="text/javascript"></script>
-
-
     </head>
 
     <body class="skin-blue sidebar-mini">
@@ -69,7 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- logo for regular state and mobile devices -->
                     <span class="logo-lg"><b>Waylay</b>Playground</span>
                 </a>
-                
+
 
                 <!-- Header Navbar -->
                 <nav class="navbar navbar-static-top" role="navigation">
@@ -79,10 +77,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </a>
                     <!-- Navbar Right Menu -->
                     <div class="navbar-custom-menu">
-                        
-                        
-                            
-                            <ul class="nav navbar-nav">
+
+
+
+                        <ul class="nav navbar-nav">
 
 
                             <!-- Notifications Menu -->
@@ -151,7 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- sidebar: style can be found in sidebar.less -->
                 <section class="sidebar">
 
-                    
+
                     <!-- search form (Optional)
                     <form action="#" method="get" class="sidebar-form">
                         <div class="input-group">
@@ -161,7 +159,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </span>
                         </div>
                     </form>
-                     -->
+                    -->
 
                     <!-- Sidebar Menu -->
                     <ul class="sidebar-menu">
@@ -185,29 +183,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <span>Tasks</span> 
                             </a>
                         </li>
-                        
+
                         <li>
                             <a href="http://docs.waylay.io/" target="_blank">
                                 <i class="fa fa-book"></i> 
                                 <span>Documentation</span>
                             </a>
                         </li>
-                        
+
                         <li>
                             <a href="http://forum.waylay.io/" target="_blank">
                                 <i class="fa fa-users"></i> 
                                 <span>Forum</span>
                             </a>
                         </li>
-                        
+
                         <li>
                             <a href="about.html">
                                 <i class="fa fa-file-o"></i> 
                                 <span>About Waylay</span>
                             </a>
                         </li>
-                        
-                        
+
+
 
                     </ul><!-- /.sidebar-menu -->
                 </section>
@@ -253,10 +251,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
             </footer>
         </div><!-- ./wrapper -->
-
-
-
-        
 
         <script>
             var apiKey = "******************************API KEY******************************************";
@@ -314,11 +308,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 });
             }
 
-
             $.ajax({
                 type: 'GET', // define the type of HTTP verb we want to use 
                 url: 'https://app.waylay.io/api/tasks?hits=100',
-
                 dataType: 'json', // what type of data do we expect back from the server
                 async: true,
                 beforeSend: function (xhr) {
@@ -347,12 +339,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 table += "<td>" + task.name + "</td>";
                                 table += "<td>" + task.type + "</td>";
                                 table += "<td>";
-                                
+
                                 //code to allow toggle of task status : running <--> stopped
                                 if (task.status === "running") {
-                                    table += '<div class="taskStatus'+ task.ID+'" >running</div><div class="taskStatus'+ task.ID+'" style="display:none">stopped';
+                                    table += '<div class="taskStatus' + task.ID + '" >running</div><div class="taskStatus' + task.ID + '" style="display:none">stopped';
                                 } else if (task.status === "stopped") {
-                                    table += '<div class="taskStatus'+ task.ID+'" >stopped</div><div class="taskStatus'+ task.ID+'" style="display:none">running';
+                                    table += '<div class="taskStatus' + task.ID + '" >stopped</div><div class="taskStatus' + task.ID + '" style="display:none">running';
                                 }
                                 //--code to allow toggle of task status : running <--> stopped
 
@@ -360,25 +352,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 //play button
                                 table += "<a class='fa fa-fw fa-play";
-                                if ("running" === task.status) 
+                                if ("running" === task.status)
                                     table += " na";
-                                table += "' onclick='start("+ task.ID+ ")' id='startTask" + task.ID + "'></a>";
+                                table += "' onclick='start(" + task.ID + ")' id='startTask" + task.ID + "'></a>";
                                 //--play button
 
                                 //stop button
                                 table += "<a class='fa fa-fw fa-stop";
-                                if ("stopped" === task.status) 
+                                if ("stopped" === task.status)
                                     table += " na";
-                                table += "' onclick='stop("+ task.ID+ ")' id='stopTask" + task.ID + "'></a>";
+                                table += "' onclick='stop(" + task.ID + ")' id='stopTask" + task.ID + "'></a>";
                                 //--stop button
-                                
+
                                 //delete button
                                 table += "<a class='fa fa-fw fa-trash-o";
-                                if ("running" === task.status) 
+                                if ("running" === task.status)
                                     table += " na";
-                                table += "' onclick='deleteTask("+ task.ID+ ")' id='deleteTask" + task.ID + "'></a>";
+                                table += "' onclick='deleteTask(" + task.ID + ")' id='deleteTask" + task.ID + "'></a>";
                                 //--delete button
-                                
+
                                 table += "</td></tr>";
                             }
                         }//--end of loop through list of tasks
@@ -394,7 +386,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         //else display the table of tasks
                         document.getElementById("dataTable").innerHTML = table;
                     }
-                    
+
                     //javascript which provides #ofEntriesFilter, searchFilter, sorting, and pages
                     $(function () {
                         $('#tasks').DataTable();
@@ -415,26 +407,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         // here we will handle errors and validation messages
                     });
-
-
             function make_base_auth(user, password) {
                 var tok = user + ':' + password;
                 var hash = btoa(tok);
                 return "Basic " + hash;
             }
-
-
         </script>
-
-        <!-- page script -->
-        <script type="text/javascript">
-
-        </script>
-
-        <!-- Optionally, you can add Slimscroll and FastClick plugins.
-              Both of these plugins are recommended to enhance the
-              user experience. Slimscroll is required when using the
-              fixed layout. -->
     </body>
 
 

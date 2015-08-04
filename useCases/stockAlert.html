@@ -23,26 +23,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         -->
         <link href="../dist/css/skins/skin-blue.min.css" rel="stylesheet" type="text/css" />
 
-        <!-- REQUIRED JS SCRIPTS -->
-
-        <!-- jQuery 2.1.4 -->
-        <script src="../plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
-        <!-- Bootstrap 3.3.2 JS -->
-        <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <!-- AdminLTE App -->
-        <script src="../dist/js/app.min.js" type="text/javascript"></script>
-
-        <script src="createStockAlert.js"></script> <!-- load our javascript file -->
+        <!-- iCheck for checkboxes and radio inputs -->
+        <link href="../plugins/iCheck/all.css" rel="stylesheet" type="text/css" />
         
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('input[type="checkbox"]').click(function () {
-                    if ($(this).attr("hasAccessKey") === "true") {
-                        $(".accessKeyForms").toggle();
-                    }
-                });
-            });
-        </script>
+        
 
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -52,26 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <!--
-    BODY TAG OPTIONS:
-    =================
-    Apply one or more of the following classes to get the
-    desired effect
-    |---------------------------------------------------------|
-    | SKINS         | skin-blue                               |
-    |               | skin-black                              |
-    |               | skin-purple                             |
-    |               | skin-yellow                             |
-    |               | skin-red                                |
-    |               | skin-green                              |
-    |---------------------------------------------------------|
-    |LAYOUT OPTIONS | fixed                                   |
-    |               | layout-boxed                            |
-    |               | layout-top-nav                          |
-    |               | sidebar-collapse                        |
-    |               | sidebar-mini                            |
-    |---------------------------------------------------------|
-    -->
+
     <body class="skin-blue sidebar-mini">
         <div class="wrapper">
 
@@ -204,14 +169,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <span>Documentation</span>
                             </a>
                         </li>
-                        
+
                         <li>
                             <a href="http://forum.waylay.io/" target="_blank">
                                 <i class="fa fa-users"></i> 
                                 <span>Forum</span>
                             </a>
                         </li>
-                        
+
                         <li>
                             <a href="../about.html">
                                 <i class="fa fa-file-o"></i> 
@@ -239,38 +204,81 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <section class="content">
                     <h1>Stock Alert Form</h1>
                     This form makes use of Waylay platform to send you email notifications when a stock price falls or rises above a threshold value.<br><br>
-                   
+
                     <!-- OUR FORM -->
-                    <form action="../tasks.html" method="POST">
+                    <form action="../tasks.html" method="POST" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="name" class="col-sm-1 control-label">Task Name</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="e.g. AAPLabove150 (appears in tasks as stockAlert_AAPLabove150)">
+                                <!-- errors will go here -->
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="col-sm-1 control-label">Email</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" name="email" id="email" placeholder="e.g. dan@waylay.io">
+                            </div>
+                        </div>
 
-                        <label for="name">Task & Resource Name (prefixed with "stockAlert_")</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="e.g. AAPLabove150">
-                        <!-- errors will go here -->
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">Task Type</label>
+                            <div class="col-sm-11">
+                                <input class="minimal" type="radio" name="taskType" id="taskType" value="periodic" checked>&nbsp
+                                Periodic
+                            </div>
+                        </div>
+                        
 
-                        <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email" id="email" placeholder="e.g. dan@waylay.io">
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">Frequency</label>
+                            <div class="col-sm-11">
+                                <input class="minimal" type="radio" name="frequency" id="frequency" value="1800000" checked>&nbsp
+                                30 mins
+                            </div>
+                        </div>
 
-                        <label>Task Type</label>
-                        <input type="radio" name="taskType" id="taskType" value="periodic" checked>Periodic<br>
-                        <label>Frequency</label>
-                        <input type="radio" name="frequency" id="frequency" value="1800000" checked>30 mins<br>
+                        <div class="form-group">
+                            <label for="apiKey" class="col-sm-1 control-label">Waylay API Key</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" name="apiKey" id="apiKey" placeholder="Waylay API Key">
+                            </div>
+                        </div>
 
-                        <label for="apiKey">Waylay API Key</label>
-                        <input type="text" class="form-control" name="apiKey" id="apiKey" placeholder="Waylay API Key">
+                        <div class="form-group">
+                            <label for="apiSecret" class="col-sm-1 control-label">Waylay API Secret</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" name="apiSecret" id="apiSecret" placeholder="Waylay API Secret">
+                            </div>
+                        </div>
 
-                        <label for="apiSecret">Waylay API Secret</label>
-                        <input type="text" class="form-control" name="apiSecret" id="apiSecret" placeholder="Waylay API Secret">
+                        <div class="form-group">
+                            <label for="ticker" class="col-sm-1 control-label">Stock Ticker</label>
+                            <div class="col-sm-11">
+                                <input type="text" class="form-control" name="ticker" id="ticker" placeholder="e.g. AAPL for Apple Inc., or GOOG for Google Inc.">
+                            </div>
+                        </div>
 
-                        <label for="ticker">Stock Ticker</label>
-                        <input type="text" class="form-control" name="ticker" id="ticker" placeholder="e.g. AAPL for Apple Inc., or GOOG for Google Inc.">
+                        <div class="form-group">
+                            <label for="threshold" class="col-sm-1 control-label">Threshold Value</label>
+                            <div class="col-sm-11">
+                                <label for="above" class="control-label">Above&nbsp;</label>
+                                <input checked class="minimal" type="radio"  name="compare" id="above" value="above" required>&nbsp
+                                <label for="below" class="control-label">Below&nbsp</label>
+                                <input class="minimal" type="radio"  name="compare" id="below" value="below">&nbsp
 
-                        <input type="radio"  name="compare" id="above" value="above" required><label for="above">Above</label>
-                            <input type="radio"  name="compare" id="below" value="below"><label for="below">Below</label><br>
+                                <input type="number" step="any" name="threshold" id="threshold" placeholder="e.g. 150"><br>
+                            </div>
+                        </div>
 
-                        <label for="threshold">Threshold Value</label>
-                        <input type="number" step="any" name="threshold" id="threshold" placeholder="e.g. 150"><br>
+                        <div class="form-group">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-11">
+                                <button type="submit" class="btn btn-success">Submit <span class="fa fa-arrow-right"></span></button>
+                            </div>
+                        </div>
 
-                        <button type="submit" class="btn btn-success">Submit <span class="fa fa-arrow-right"></span></button>
                     </form>
 
                     <!-- Your Page Content Here -->
@@ -289,7 +297,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </footer>
         </div><!-- ./wrapper -->
 
+<!-- REQUIRED JS SCRIPTS -->
 
+        <!-- jQuery 2.1.4 -->
+        <script src="../plugins/jQuery/jQuery-2.1.4.min.js" type="text/javascript"></script>
+        <!-- Bootstrap 3.3.2 JS -->
+        <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <!-- AdminLTE App -->
+        <script src="../dist/js/app.min.js" type="text/javascript"></script>
+
+        <script src="createStockAlert.js"></script> <!-- load our javascript file -->
+<!-- iCheck 1.0.1 -->
+        <script src="../plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+        <!-- Select2 -->
+        <script src="../plugins/select2/select2.full.min.js" type="text/javascript"></script>
+        <script>
+            //Initialize Select2 Elements
+            $(".select2").select2();
+
+            //blue color scheme for iCheck
+            //iCheck for checkbox and radio inputs
+            $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+                checkboxClass: 'icheckbox_minimal-blue',
+                radioClass: 'iradio_minimal-blue'
+            });
+        </script>
 
         <!-- Optionally, you can add Slimscroll and FastClick plugins.
               Both of these plugins are recommended to enhance the
