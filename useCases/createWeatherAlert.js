@@ -8,7 +8,7 @@ $(document).ready(function () {
         // there are many ways to get this data using jQuery (you can use the class or id also)
 
         var name = $('input[name=name]').val(),
-                frequency = $('input[name=frequency]').val(),
+                //frequency = $('input[name=frequency]').val(),
                 taskType = $('input[name=taskType]').val(),
                 hour = $('input[name=hour]').val(),
                 weekday = $('input[name=weekday]').val() || 'off',
